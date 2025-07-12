@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ReWear Community Exchange Design System */
+
+@layer base {
+  :root {
+    /* Community-focused color palette */
+    --background: 220 15% 97%;
+    --foreground: 220 8.9% 46.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 8.9% 46.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 8.9% 46.1%;
+
+    /* Green for sustainability and community */
+    --primary: 142 76% 36%;
+    --primary-foreground: 356 100% 97%;
+    --primary-glow: 142 76% 46%;
+
+    /* Warm community tones */
+    --secondary: 47 96% 89%;
+    --secondary-foreground: 142 76% 36%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    /* Vibrant accent for gamification */
+    --accent: 262 83% 58%;
+    --accent-foreground: 220 14.3% 95.9%;
+
+    /* Donation/reward colors */
+    --reward: 43 96% 56%;
+    --reward-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients for ReWear */
+    --gradient-community: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-reward: linear-gradient(135deg, hsl(var(--reward)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    
+    /* Shadows with primary color */
+    --shadow-community: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with green sustainability theme */
+    --background: 220 13% 9%;
+    --foreground: 220 14.3% 95.9%;
+
+    --card: 220 13% 11%;
+    --card-foreground: 220 14.3% 95.9%;
+
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 14.3% 95.9%;
+
+    --primary: 142 84% 47%;
+    --primary-foreground: 220 13% 9%;
+    --primary-glow: 142 84% 57%;
+
+    --secondary: 220 13% 14%;
+    --secondary-foreground: 142 84% 47%;
+
+    --muted: 220 13% 14%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 262 83% 68%;
+    --accent-foreground: 220 13% 9%;
+
+    --reward: 43 96% 66%;
+    --reward-foreground: 220 13% 9%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 14.3% 95.9%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 142 84% 47%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer components {
+  /* ReWear custom utility classes */
+  .gradient-text {
+    background: var(--gradient-community);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .reward-gradient {
+    background: var(--gradient-reward);
+  }
+  
+  .community-gradient {
+    background: var(--gradient-community);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-community {
+    box-shadow: var(--shadow-community);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Hover animations */
+  .hover-lift {
+    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-community;
+  }
+  
+  .hover-scale {
+    @apply transition-smooth hover:scale-105;
+  }
+}
